@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp Video Share</title>
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph Meta Tags for WhatsApp -->
     <meta property="og:type" content="video.other">
     <meta property="og:url" content="https://kaushal76tvd.github.io/video-share/">
     <meta property="og:title" content="Watch this amazing video!">
     <meta property="og:description" content="Check out this cool video I found!">
-    <meta property="og:image" content="https://yourwebsite.com/thumbnail.jpg">
-    <meta property="og:video" content="https://hola-assets.s3.ap-south-1.amazonaws.com/videos/abc.mp4">
-    <meta property="og:video:secure_url" content="https://hola-assets.s3.ap-south-1.amazonaws.com/videos/abc.mp4">
-    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:image" content="https://yourwebsite.com/thumbnail.jpg"> <!-- Update with your video thumbnail -->
+    <meta property="og:video" content="https://iframe.mediadelivery.net/play/392410/2e0c984d-1872-43a0-beb3-3e0afdd57fe0">
+    <meta property="og:video:secure_url" content="https://iframe.mediadelivery.net/play/392410/2e0c984d-1872-43a0-beb3-3e0afdd57fe0">
+    <meta property="og:video:type" content="text/html">
     <meta property="og:video:width" content="1280">
     <meta property="og:video:height" content="720">
 </head>
 <body>
-    <h2>Watch the Video 2</h2>
-    <video width="100%" controls>
-        <source src="https://hola-assets.s3.ap-south-1.amazonaws.com/videos/abc.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <h2>Watch the Video</h2>
+    <iframe 
+        src="https://iframe.mediadelivery.net/play/392410/2e0c984d-1872-43a0-beb3-3e0afdd57fe0" 
+        width="100%" height="500" 
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+    </iframe>
+
     <br><br>
     <button onclick="shareVideo()">Share on WhatsApp</button>
 
