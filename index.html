@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Video Share</title>
+
+    <!-- Open Graph Meta Tags for WhatsApp -->
+    <meta property="og:type" content="video.other">
+    <meta property="og:url" content="https://hola-assets.s3.ap-south-1.amazonaws.com/videos/abc.mp4">
+    <meta property="og:title" content="Check out this video!">
+    <meta property="og:description" content="Watch this amazing video now.">
+    <meta property="og:image" content="https://yourwebsite.com/thumbnail.jpg">
+    <meta property="og:video" content="https://hola-assets.s3.ap-south-1.amazonaws.com/videos/abc.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="1280">
+    <meta property="og:video:height" content="720">
+
+    <script>
+        function shareVideo() {
+            const videoUrl = "https://hola-assets.s3.ap-south-1.amazonaws.com/videos/abc.mp4";
+            const shareText = "Check out this video! 🎥";
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: "Check out this video!",
+                    text: shareText,
+                    url: videoUrl
+                }).then(() => console.log('Shared successfully'))
+                  .catch((error) => console.error('Error sharing:', error));
+            } else {
+                // Fallback for WhatsApp Web
+                const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + videoUrl)}`;
+                window.open(whatsappUrl, "_blank");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Share Video on WhatsApp</h2>
+    <button onclick="shareVideo()">Share on WhatsApp</button>
+</body>
+</html>
