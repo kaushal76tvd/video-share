@@ -3,47 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Video Share</title>
-
-    <!-- Open Graph Meta Tags for WhatsApp -->
     <meta property="og:type" content="video.other">
-    <meta property="og:url" content="https://kaushal76tvd.github.io/video-share/">
-    <meta property="og:title" content="Watch this amazing video!">
-    <meta property="og:description" content="Check out this cool video I found!">
-    <meta property="og:image" content="https://yourwebsite.com/thumbnail.jpg"> <!-- Replace with actual thumbnail -->
-    <meta property="og:video" content="https://vz-55ae010e-2a2.b-cdn.net/2e0c984d-1872-43a0-beb3-3e0afdd57fe0/play_480p.mp4">
-    <meta property="og:video:secure_url" content="https://vz-55ae010e-2a2.b-cdn.net/2e0c984d-1872-43a0-beb3-3e0afdd57fe0/play_480p.mp4">
-    <meta property="og:video:type" content="video/mp4">
-    <meta property="og:video:width" content="1280">
-    <meta property="og:video:height" content="720">
+    <meta property="og:url" content="https://vimeo.com/1062805565">
+    <meta property="og:title" content="My Vimeo Video">
+    <meta property="og:description" content="Watch this awesome video on Vimeo!">
+    <meta property="og:image" content="https://i.vimeocdn.com/video/XXXXXXXXX_640.jpg">
+    <meta property="og:video" content="https://player.vimeo.com/video/1062805565">
+    <title>Share Vimeo Video</title>
 </head>
 <body>
-    <h2>Watch the Video 6</h2>
-    <video width="100%" controls>
-        <source src="https://vz-55ae010e-2a2.b-cdn.net/2e0c984d-1872-43a0-beb3-3e0afdd57fe0/play_480p.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+
+    <h2>Watch and Share This Vimeo Video</h2>
+
+    <!-- Embedded Vimeo Video -->
+    <iframe src="https://player.vimeo.com/video/1062805565" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
     <br><br>
-    <button onclick="shareVideo()">Share on WhatsApp</button>
 
-    <script>
-        function shareVideo() {
-            const videoUrl = "https://kaushal76tvd.github.io/video-share/";
-            const shareText = "Check out this video! 🎥";
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: "Watch this amazing video!",
-                    text: shareText,
-                    url: videoUrl
-                }).then(() => console.log('Shared successfully'))
-                  .catch((error) => console.error('Error sharing:', error));
-            } else {
-                const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + videoUrl)}`;
-                window.open(whatsappUrl, "_blank");
-            }
-        }
-    </script>
+    <!-- WhatsApp Share Button -->
+    <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20awesome%20video:%20https://vimeo.com/1062805565" 
+       target="_blank">
+        <button>Share on WhatsApp</button>
+    </a>
+
 </body>
 </html>
